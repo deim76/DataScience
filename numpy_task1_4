@@ -1,0 +1,37 @@
+Задание 1
+import numpy as np
+ar
+ar=np.array([[1, 2, 3, 3, 1],[6, 8, 11, 10, 7]])
+a
+a=np.transpose(ar)
+a
+array([[ 1,  6],
+       [ 2,  8],
+       [ 3, 11],
+       [ 3, 10],
+       [ 1,  7]])
+mean_a=a.mean(0)
+mean_a
+array([2. , 8.4])
+Задание 2
+a_centered=a-mean_a
+a_centered
+array([[-1. , -2.4],
+       [ 0. , -0.4],
+       [ 1. ,  2.6],
+       [ 1. ,  1.6],
+       [-1. , -1.4]])
+Задание 3
+a_centered_sp=np.dot(a_centered[:,0],a_centered[:,1])
+a_centered_sp
+8.0
+cov=a_centered_sp/(len(a)-1)
+cov
+2.0
+Задание 4
+cov_np_cov=np.cov(np.transpose(a))[0][1]
+cov_np_cov
+2.0
+cov==cov_np_cov
+cov==cov_np_cov
+True
